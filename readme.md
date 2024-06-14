@@ -21,16 +21,16 @@ The Electric Bill Calculator is a web application designed to help users calcula
 - Secure and efficient data storage using SQL Workbench.
 
 ## Screenshot
-![Electric Bill Calculator Screenshot]("C:\Users\mailt\OneDrive\Pictures\Screenshots\Screenshot (485).png")
+![Electric Bill Calculator Screenshot](C:\Users\mailt\OneDrive\Pictures\Screenshots\Screenshot (485).png)
 
 
 
 ## Contributors
 This project was developed by the following team members:
 
-- **Member 1** - [GitHub Profile](https://github.com/member1)
-- **Member 2** - [GitHub Profile](https://github.com/member2)
-- **Member 3** - [GitHub Profile](https://github.com/member3)
+- Dinesh Karthik Rajan D - [GitHub Profile](https://github.com/DineshKarthikRajanD)
+- Dhanush K - [GitHub Profile](https://github.com/DhanushKanagaraj)
+
 
 ## How to Run the Project
 
@@ -64,8 +64,6 @@ This project was developed by the following team members:
 6. **Open the Application in Your Browser**
     Go to `http://127.0.0.1:5000` to view and use the Electric Bill Calculator.
 
-## Contributing
-Contributions are welcome! Please read the [contributing guidelines](CONTRIBUTING.md) for more details.
 
 
 
