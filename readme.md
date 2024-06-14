@@ -21,7 +21,7 @@ The Electric Bill Calculator is a web application designed to help users calcula
 - Secure and efficient data storage using SQL Workbench.
 
 ## Screenshot
-![Electric Bill Calculator Screenshot](https://photos.google.com/photo/AF1QipN9uVWYYvPVCFJ8jWPv8zZ4uhZVvJPpIZEQhV38)
+![Electric Bill Calculator Screenshot](AF1QipN9uVWYYvPVCFJ8jWPv8zZ4uhZVvJPpIZEQhV38)
 
 
 
