@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Bill</title>
+</head>
+<style>
+  body {
+    background-color: rgb(31, 31, 59);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .container {
+    max-width: 500px;
+    margin: 10% auto;
+    width: 450px;
+    background-color: rgb(245, 245, 245);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="number"] {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .btn {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  .bt1{
+    background-color: #3f463f; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .btn:hover {
+    background-color: #3e8e41;
+  }
+  
+  #bill-result {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 3px;
+    display: none; /* Initially hidden */
+  }
+  
+  #bill-result.visible {
+    display: block; /* Show result on calculation */
+  }
+  
+</style>
+<body>
+    <h1 style="color: white;">Calculate Electricity Bill</h1>
+    <div class="container">
+
+    
+    <form method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" class="std" required><br>
+        <label for="appliances">Number of Appliances:</label>
+        <input type="number" id="appliances" name="appliances" min="1" class="std" required><br>
+        <div id="appliance-details"></div>
+        <label for="monyear">Month and Year (mm-yyyy):</label>
+        <input type="text" id="monyear" name="monyear" class="std" required><br>
+        <button type="submit" class="btn">Calculate</button>
+        
+        <!-- <a href="http://127.0.0.1:2000/find">Get Bill</a> -->
+        {% if tamount %}
+        <p>Your total bill is: {{ tamount }}</p>
+        <button onclick="nextPage()" style="margin-left:20px;" class="bt1">Back</button>
+        {% endif %}
+      </div>
+    </form>
+  </div>
+  <div>
+  
+    <script>
+        document.getElementById('appliances').addEventListener('input', function() {
+            const count = this.value;
+            let details = '';
+            for (let i = 1; i <= count; i++) {
+                details += `<label for="power_rating_${i}">Power Rating of Appliance ${i} (in Watts):</label>
+                            <input type="number" id="power_rating_${i}" name="power_rating_${i}" required><br>
+                            <label for="usage_time_${i}">Usage Time of Appliance ${i} (in hours):</label>
+                            <input type="number" id="usage_time_${i}" name="usage_time_${i}" required><br>`;
+            }
+            document.getElementById('appliance-details').innerHTML = details;
+        });
+       function nextPage()
+       {
+        window.location.href='http://127.0.0.1:2000/';
+       }
+    </script>
+</body>
+</html>

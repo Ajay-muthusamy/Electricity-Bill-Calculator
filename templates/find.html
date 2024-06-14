@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Bill</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            /* background-color: #f4f4f9; */
+            background-color: rgb(31, 31, 59);
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #4CAF50;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        td {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+        .bt1{
+            background-color: #3f463f; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 45vh;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Find Previous Bill</h1>
+    <form method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="monyear">Month and Year (mm-yyyy):</label>
+        <input type="text" id="monyear" name="monyear" required><br>
+        <button type="submit">Find Bill</button>
+        <button type="button" onclick="nextPage()" class="bt1">Back</button>
+    </form>
+    {% if records %}
+    <h2 style="color: #333;">Bill Details:</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Month-Year</th>
+            <th>Power Consumption (kWh)</th>
+            <th>Total Amount (₹)</th>
+        </tr>
+        {% for record in records %}
+        <tr>
+            <td>{{ record[0] }}</td>
+            <td>{{ record[1] }}</td>
+            <td>{{ record[2] }}</td>
+            <td>{{ record[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    <script>
+        function nextPage()
+        {
+            window.location.href='http://127.0.0.1:2000/';
+        }
+    </script>
+</body>
+
+</html>

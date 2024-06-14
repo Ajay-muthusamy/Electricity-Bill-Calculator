@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electric Bill Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='') }}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    body{
+      background-color: rgb(31, 31, 59);
+    }
+    * {
+      font-family: "Poppins", sans-serif;
+    }
+    .box {
+      width: 100vh;
+      text-align: center;
+      background-color: rgb(74, 211, 92);
+      padding: 5%;
+      color: white;
+      border-radius: 5%;
+    }
+    .container {
+      margin-top: 30vh;
+      background-color: rgb(255, 255, 255);
+      width: 90vh;
+      height: 35vh  ;
+      padding: 1%;
+      border-radius: 2%;
+      margin-left: 60vh;
+      padding: 1%;
+    }
+    .listtag {
+      width: 40vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20%;
+    }
+    ul {
+      background-color: rgb(255, 255, 255);
+      padding: 20%;
+      border-radius: 2%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    ul > li {
+      padding-top: 20%;
+      font-size: 12px;
+      list-style: none;
+      background-color: rgb(255, 255, 255);
+      padding: 5%;
+      border: 1px solid rgb(229, 227, 227);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    a {
+      text-decoration: none;
+    }
+    .sub-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20%;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="sub-container">
+        <nav class="navtag">
+          <ul class="list-unstyled listtag">
+            <!-- <li><a href="{{ url_for('setup') }}">Setup</a></li> -->
+            <li><a href="{{ url_for('calculate') }}"><img src="icons8-thunder-50.png" alt="" style="width:18%;">Calculate Bill</a></li>
+            <li><a href="{{ url_for('find') }}"><img src="https://www.pngmart.com/files/7/Bill-PNG-Clipart.png" alt="" style="width:12%;"> Find Bill</a></li>
+            <li><a href="{{ url_for('findall') }}"><img src="https://assets.website-files.com/5a26c42ac0c9b00001479372/5c1166de66736602723d9238_29.png" alt="" style="width:12%;">  Find All Bills</a></li>
+            <li><a href="{{ url_for('appliances') }}"><img src="https://cdn-icons-png.flaticon.com/512/1692/1692708.png" alt="" style="width:12%;"> Appliances</a></li>
+          </ul>
+          <div class="main-container">
+            <h1></h1>
+          </div>
+        </nav>
+        <div class="box">
+          <img
+            src="https://pngimg.com/uploads/dollar_sign/dollar_sign_PNG10.png"
+            alt=""
+            style="width: 80px"
+          />
+          <h3>Electric Bill Calculator</h3>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
